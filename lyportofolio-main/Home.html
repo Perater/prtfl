@@ -922,8 +922,8 @@
           <p class="work-desc">Coming soon...</p>
         </div>
       </div>
-      <div class="work-card reveal">
-        <div class="work-thumb" style="background: none; padding: 0;">
+      <div class="work-card" onclick="openLightbox('image/margaret.png')">
+        <div class="work-thumb" style="background: none; padding: 0; height: 220px; overflow: hidden;">
           <img src="image/margaret.png" alt="Margaret Book Cover" 
           style="width: 100%; object-fit: cover;"/>
           <span class="work-badge">Book Cover</span>
@@ -936,9 +936,9 @@
           <br>
           <p class="work-desc">The torn-paper title treatment creates a sense of something broken or interrupted, fitting for a psychological drama where emotions lie just beneath the surface. Raindrops, botanical elements, and a lone butterfly reinforce themes of solitude, growth, and emotional weight. Typography is bold yet elegant, anchoring the composition without overpowering the illustration.</p>
           <br>
-          <h1 class="work-type">Tools used: Canva</h1>
+          <h1 class="work-type"><strong>Tools used:</strong>  Canva</h1>
           <br>
-          <h1 class="work-type">Focus: Color restraint, typographic hierarchy, mood-driven composition</h1>
+          <h1 class="work-type"><strong>Focus:</strong> Color restraint, typographic hierarchy, mood-driven composition</h1>
         </div>
       </div>
     </div>
@@ -990,7 +990,7 @@
       <a href="#">Email</a>
     </div>
   </footer>
-
+  
   <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -1005,6 +1005,27 @@
     reveals.forEach(el => observer.observe(el));
   </script>
 
+    <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()" style="
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+    backdrop-filter: blur(6px);
+  ">
+    <img id="lightbox-img" src="" alt="" style="
+    max-height: 90vh;
+    max-width: 90vw;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    animation: fadeUp 0.3s ease;
+"/>
+  </div>
 </body>
-
 </html>
