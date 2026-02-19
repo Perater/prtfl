@@ -31,3 +31,19 @@ function sendMail() {
             alert("Failed to send. Error: " + JSON.stringify(error));
         });
 }
+
+function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    document.getElementById("lightbox-img").src = src;
+    lb.style.display = "flex";
+    document.body.style.overflow = "hidden"; // prevents background scrolling
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+    document.body.style.overflow = ""; // restore scrolling
+}
+
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeLightbox();
+});
