@@ -1,10 +1,26 @@
 function sendMail() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let proj = document.getElementById("proj").value;
+    let message = document.getElementById("message").value.trim();
+
+    // Validation
+    if (!name || !email || !proj || !message) {
+        alert("Please fill in all fields before sending.");
+        return;
+    }
+
+    if (proj === "") {
+        alert("Please select a project type.");
+        return;
+    }
+
     let parms = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        proj: document.getElementById("proj").value,
-        message: document.getElementById("message").value,
-        subject: "New Project Inquiry – " + document.getElementById("proj").value,
+        name: name,
+        email: email,
+        proj: proj,
+        message: message,
+        subject: "New Project Inquiry – " + proj,
     }
 
     emailjs.send("service_uecu7h8", "template_42bp0yc", parms)
